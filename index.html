@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Xavier Favia - Portfolio</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="laptop-frame">
+			<div class="laptop-screen">
+				<header class="terminal">
+					<div class="terminal-bar">
+						<span class="btn red"></span>
+						<span class="btn yellow"></span>
+						<span class="btn green"></span>
+						<span class="title">xavierFavia@portfolio:~$</span>
+					</div>
+
+					<nav class="nav" role="navigation" aria-label="Main navigation">
+						<a href="#about">[About]</a>
+						<a href="#projects">[Projects]</a>
+						<a href="#skills">[Skills]</a>
+						<a href="#contact">[Contact]</a>
+					</nav>
+
+					<main class="content">
+						<h1 style="display: none">Xavier Favia - Portfolio</h1>
+
+						<section id="about" class="section">
+							<div class="section-header">
+								<p class="command">> cd about</p>
+								<h2>About Me</h2>
+							</div>
+							<div class="section-content">
+								<p>
+									Hello, I'm <strong>Xavier Favia</strong>
+									I'm a student at the University of Wisconsin-Madison studying
+									computer science, and I have a strong interest in learning new
+									technologies and expanding my skill set. I enjoy taking on
+									challenges, whether they include building passion projects or
+									picking up new programming languages. Nothing gives me greater
+									satisfaction than seeing my work come to life and knowing that
+									it is making an impact.
+								</p>
+							</div>
+						</section>
+
+						<section id="projects" class="section">
+							<div class="section-header">
+								<p class="command">> cd projects</p>
+								<h2>Projects</h2>
+							</div>
+							<div class="section-content">
+								<div class="project-item">
+									<h3>Portfolio Website</h3>
+									<p>A thematic portfolio showcasing basic web fundamentals.</p>
+									<div class="project-tech">HTML • CSS • JavaScript</div>
+								</div>
+							</div>
+						</section>
+
+						<section id="skills" class="section">
+							<div class="section-header">
+								<p class="command">> cd skills</p>
+								<h2>Skills & Technologies</h2>
+							</div>
+							<div class="section-content">
+								<div class="skills-grid">
+									<div class="skill-category">
+										<h3>Programming Languages</h3>
+										<p>Java, JS, Python, C</p>
+									</div>
+									<div class="skill-category">
+										<h3>Frameworks & Tools</h3>
+										<p>React, Git + Github</p>
+									</div>
+									<div class="skill-category">
+										<h3>Web Technologies</h3>
+										<p>HTML5, CSS3, Node.js</p>
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<section id="contact" class="section">
+							<div class="section-header">
+								<p class="command">> cd contact</p>
+								<h2>Get In Touch</h2>
+							</div>
+							<div class="section-content">
+								<div class="contact-info">
+									<div class="contact-item">
+										<strong>Email:</strong>
+										<a href="mailto:xavierfavia@gmail.com"
+											>xavierfavia@gmail.com</a
+										>
+									</div>
+									<div class="contact-item">
+										<strong>GitHub:</strong>
+										<a
+											href="https://github.com/xfavia2468"
+											target="_blank"
+											rel="noopener"
+											>github.com/xfavia2468</a
+										>
+									</div>
+									<div class="contact-item">
+										<strong>LinkedIn:</strong>
+										<a
+											href="https://linkedin.com/in/username"
+											target="_blank"
+											rel="noopener"
+											>linkedin.com/in/username</a
+										>
+									</div>
+									<div class="contact-item">
+										<a href="link" download>
+											<u><strong>Download Resume</strong></u>
+										</a>
+									</div>
+								</div>
+							</div>
+						</section>
+					</main>
+				</header>
+			</div>
+		</div>
+
+		<script>
+			const content = document.querySelector(".content");
+			const sections = document.querySelectorAll("section");
+			const navLinks = document.querySelectorAll(".nav a");
+
+			content.addEventListener("scroll", () => {
+				let current = "";
+				sections.forEach((section) => {
+					const sectionTop = section.offsetTop;
+					if (content.scrollTop >= sectionTop - 100) {
+						current = section.getAttribute("id");
+					}
+				});
+
+				navLinks.forEach((link) => {
+					link.classList.remove("active");
+					if (link.getAttribute("href") === `#${current}`) {
+						link.classList.add("active");
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
