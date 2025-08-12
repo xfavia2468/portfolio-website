@@ -2,7 +2,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	background-image: url('background.png');
+	background-image: url("background.png");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -13,6 +13,10 @@ body {
 	scroll-behavior: smooth;
 	height: 100vh;
 	overflow: hidden;
+}
+
+a {
+	color: #eecb98;
 }
 
 /* Custom Scrollbar Styling */
@@ -54,10 +58,7 @@ body {
 	padding: clamp(15px, 3vw, 25px);
 	background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
 	border-radius: clamp(10px, 2vw, 15px) clamp(10px, 2vw, 15px) 0 0;
-	box-shadow: 
-		0 0 0 2px #333,
-		0 0 0 4px #444,
-		0 20px 40px rgba(0, 0, 0, 0.5),
+	box-shadow: 0 0 0 2px #333, 0 0 0 4px #444, 0 20px 40px rgba(0, 0, 0, 0.5),
 		inset 0 1px 0 rgba(255, 255, 255, 0.1);
 	box-sizing: border-box;
 	display: flex;
@@ -70,9 +71,7 @@ body {
 	background: #000;
 	border-radius: clamp(6px, 1.5vw, 8px);
 	padding: clamp(2px, 0.5vw, 3px);
-	box-shadow: 
-		inset 0 0 0 1px #555,
-		inset 0 2px 4px rgba(0, 0, 0, 0.8);
+	box-shadow: inset 0 0 0 1px #555, inset 0 2px 4px rgba(0, 0, 0, 0.8);
 	flex: 1;
 	display: flex;
 	flex-direction: column;
@@ -99,13 +98,18 @@ body {
 
 /* Screen Glare Effect */
 .terminal::before {
-	content: '';
+	content: "";
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
 	height: 2px;
-	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.1),
+		transparent
+	);
 	pointer-events: none;
 	z-index: 1;
 }
@@ -220,7 +224,7 @@ body {
 	color: #ffb03a;
 }
 
-/* Optional: Blinking cursor */
+/* Blinking cursor */
 .command::after {
 	content: "_";
 	animation: blink 1s step-start infinite;
@@ -262,7 +266,10 @@ body {
 /* Skills Grid */
 .skills-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(clamp(180px, 25vw, 200px), 1fr));
+	grid-template-columns: repeat(
+		auto-fit,
+		minmax(clamp(180px, 25vw, 200px), 1fr)
+	);
 	gap: clamp(1rem, 3vw, 1.5rem);
 }
 
@@ -324,11 +331,11 @@ body {
 		margin: 0;
 		padding: clamp(10px, 2.5vw, 15px);
 	}
-	
+
 	.nav a {
 		margin: 0 clamp(0.3rem, 1.5vw, 0.5rem);
 	}
-	
+
 	.skills-grid {
 		grid-template-columns: 1fr;
 	}
@@ -343,20 +350,20 @@ body {
 		padding: clamp(8px, 2vw, 12px);
 		border-radius: 0;
 	}
-	
+
 	.terminal {
 		padding: clamp(0.5rem, 1.5vw, 0.75rem);
 	}
-	
+
 	.nav a {
 		margin: 0 clamp(0.2rem, 1vw, 0.3rem);
 		font-size: clamp(0.7rem, 2vw, 0.8rem);
 	}
-	
+
 	.section-header h2 {
 		font-size: clamp(1rem, 3.5vw, 1.2rem);
 	}
-	
+
 	.project-item h3 {
 		font-size: clamp(0.9rem, 2.5vw, 1rem);
 	}
